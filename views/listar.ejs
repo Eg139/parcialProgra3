@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Obras de Arte</title>
+</head>
+<body>
+  <h1>Obras de Arte</h1>
+  <ul>
+    <% obras.forEach((obra) => { %>
+      <li>
+        <h2><%= obra.nombre %></h2>
+        <p>Año de Creación: <%= obra.anioDeCreacion %></p>
+        <p>Tipo: <%= obra.tipo %></p>
+        <% if (obra.imagen) { %>
+          <img src="<%= obra.imagen %>" alt="Imagen de <%= obra.nombre %>" width="200">
+        <% } else { %>
+          <p>Sin imagen</p>
+        <% } %>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
